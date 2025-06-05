@@ -1,7 +1,7 @@
-# CM Praktikum-Algoritma-Struktir Data
+# CM Praktikum-Algoritma-Struktur Data
 
 KELOMPOK 3<br>
 1. Achmad Alfi Maksum
 2. Umi Maharani
 3. Kartika Rahma Nuraini
-Reporitory Algoritma Dan Struktur Data perkuliahan Semester 2<br>
+Reposiitory Algoritma Dan Struktur Data perkuliahan Semester 2<br>

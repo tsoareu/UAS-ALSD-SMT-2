@@ -1,5 +1,5 @@
 public class AntrianPasien {
-    NodePasien head, tail; // NodePasien adalah class yang berisi data pasien
+    NodePasien head, tail; 
 
     public void tambahPasien(Pasien03 pasien03) {
         NodePasien newNode = new NodePasien(pasien03);

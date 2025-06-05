@@ -14,4 +14,6 @@ public class Pasien03 {
         System.out.println("NIK         : " + Pasien);
         System.out.println("Keluhan     : " + Keluhan);
     }
+
 }
+

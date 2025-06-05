@@ -12,4 +12,20 @@ public class AntrianPasien {
         }
     }
 
+    public void tampilkanAntrian(){
+        NodePasien current = head;
+        while (current != null) {
+            current.pasien03.tampilkanInformasi();
+            current = current.next;
+        }
+    }
+
+    public void layaniPasien(){
+        if (head == null) {
+            Pasien03 dilayani = head.pasien03;
+            head = head.next;
+            return dilayani;
+        }
+    }
+
 }

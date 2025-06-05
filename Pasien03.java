@@ -3,7 +3,7 @@ public class Pasien03 {
     String NIK;
     String Keluhan;
 
-    Public Pasien03(String Pasien, String NIK, String Keluhan) {
+    public Pasien03(String Pasien, String NIK, String Keluhan) {
         this.Pasien = Pasien;
         this.NIK = NIK;
         this.Keluhan = Keluhan;

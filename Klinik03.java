@@ -65,18 +65,21 @@ import java.util.Scanner;
         }
         size--;
 
-        String idDokter = null, nama = null;
-        int biaya = 0;
+        System.out.println("Masukkan ID Dokter: ");
+        String idDokter = sc.nextLine();
+        sc.nextLine();
+        System.out.println("Masukkan Nama Dokter: ");
+        String nama = sc.nextLine();
+        sc.nextLine();
+
         Dokter03 dokter = new Dokter03(idDokter, nama);
 
-        System.out.println("Masukkan ID Dokter: ");
-        idDokter = sc.nextLine();
-        System.out.println("Masukkan Nama Dokter: ");
-        nama = sc.nextLine();
         System.out.print("Masukkan Durasi Layanan (jam): ");
         int durasi = sc.nextInt();
         
+        int biaya = 0;
         TransaksiLayanan03 transaksi = new TransaksiLayanan03(dilayani, dokter, durasi, biaya);
+        biaya = transaksi.hitungBiaya();
         System.out.println(">> Pasien telah dilayani, transaksi berhasil dicatat.");
         
         if (rearTransaksi < max) {

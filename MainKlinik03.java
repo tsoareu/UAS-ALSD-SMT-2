@@ -12,7 +12,7 @@ public class MainKlinik03 {
             System.out.println("4. Cek Sisa Antrian Pasien");
             System.out.println("5. Lihat Riwayat Transaksi");
             System.out.println("0. Keluar");
-            System.out.println("Pilih: ");
+            System.out.print("Pilih: ");
             int pilihan = sc.nextInt();
 
             switch (pilihan) {

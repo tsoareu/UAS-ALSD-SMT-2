@@ -7,8 +7,8 @@ public class Klinik03 {
     int max;
 
     public AntrianPasien(int max) {
-        this.front = front;
-        this.rear = rear;
+        this.front = null;
+        this.rear = null;
         this.size = 0;
         this.max = max;
     }
@@ -46,8 +46,18 @@ public class Klinik03 {
         }
     }
 
-    public void layaniPasien() {
-
+    public Pasien03 layaniPasien() {
+        if (isEmpty()) {
+            System.out.println("Antrian kosong.");
+            return null;
+        }
+        Pasien03 dilayani = front.data;
+        front = front.next;
+        if (front == null) {
+            rear = null;
+        }
+        size--;
+        return dilayani;
     }
 
     public void cekSisaAntrian() {
@@ -72,6 +82,5 @@ public class Klinik03 {
             }
         }
     }
-
 }
 }

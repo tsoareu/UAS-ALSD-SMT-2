@@ -24,6 +24,25 @@ public class MainKlinik03 {
 
                     break;
                 case 3 :
+                    if (klinik.AntrianPasien.isEmpty()) {
+                        System.out.println("Antrian kosong.");
+                        break;
+                    }
+                    Pasien03 dilayani = front.data;
+                    System.out.println("Pasien " + dilayani.getNamaPasien() + " dipanggil");
+                    System.out.print("Masukkan ID Dokter: ");
+                    String idDokter = sc.nextLine();
+                    System.out.println("Masukkan Nama Dokter: ");
+                    String nama = sc.nextLine();
+                    System.out.println("Masukkan Durasi Layanan (jam): ");
+                    int durasi = sc.nextInt();
+                    sc.nextLine();
+
+                    Dokter03 dokterMelayani = new Dokter03(idDokter, nama);
+
+                    int biaya = durasi * 50000;
+                    klinik.layaniPasien(dokterMelayani, durasi, biaya);
+                    System.out.println(">> Pasien telah dilayani, transaksi berhasil dicatat.");
 
                     break;
                 case 4 :

@@ -15,5 +15,8 @@ public class Pasien03 {
         System.out.println("Keluhan     : " + Keluhan);
     }
 
+    public String getNamaPasien() {
+        return nama;
+    }
 }
 

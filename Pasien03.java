@@ -10,13 +10,9 @@ public class Pasien03 {
     }
 
     public void tampilkanInformasi(){
-        System.out.println("Nama Pasien : " + nama);
-        System.out.println("NIK         : " + NIK);
-        System.out.println("Keluhan     : " + Keluhan);
-    }
-
-    public String getNamaPasien() {
-        return nama;
+        System.out.println("Nama Pasien: " + nama);
+        System.out.println("NIK: " + NIK);
+        System.out.println("Keluhan: " + Keluhan);
     }
 }
 

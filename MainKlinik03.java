@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class MainKlinik03 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Klinik03 klinik = new Klinik03(0); 
+        Klinik03 klinik = new Klinik03(100); 
         
         while (true) {
             System.out.println();
@@ -33,7 +33,7 @@ public class MainKlinik03 {
                     klinik.lihatRiwayatTransaksi(0);
                     break;
                 case 0 :
-                    System.out.println("Terima kasih telah mengakses Sistem Antrian Klinik");
+                    System.out.println("Terima kasih telah mengakses Sistem Antrian Klinik.");
                     sc.close();
                     return;
                 default:

@@ -26,7 +26,18 @@ import java.util.Scanner;
     }
 
     public void tambahPasien(Pasien03 pasien) {
-        NodePasien newNode = new NodePasien(pasien);
+        System.out.print("Nama Pasien: ");
+        String nama = sc.nextLine();
+        
+        System.out.print("NIK: ");
+        String nik = sc.nextLine();
+        
+        System.out.print("Keluhan: ");
+        String keluhan = sc.nextLine();
+        
+        Pasien03 pasienBaru = new Pasien03(nama, nik, keluhan);
+
+        NodePasien newNode = new NodePasien(pasienBaru);
         if (isEmpty()) {
             front = rear = newNode;
         } else {
@@ -38,10 +49,10 @@ import java.util.Scanner;
     }
 
     public void lihatAntrian() {
+        System.out.println("-- Antrian Pasien --");
+        System.out.println("Antrian Pasien: ");
         if (!isEmpty()) {
             NodePasien temp = front;
-            System.out.println("-- Antrian Pasien --");
-            System.out.println("Antrian Pasien: ");
             while (temp != null) {
                 temp.data.tampilkanInformasi();
                 temp = temp.next;
@@ -56,33 +67,33 @@ import java.util.Scanner;
             System.out.println("Antrian kosong.");
             return null;
         } else {
-        Pasien03 dilayani = front.data;
-        System.out.println("Pasien " + dilayani.nama + " dipanggil");
+            Pasien03 dilayani = front.data;
+            System.out.println("Pasien " + dilayani.nama + " dipanggil");
 
-        front = front.next;
-        if (front == null) {
-            rear = null;
-        }
-        size--;
+            front = front.next;
+            if (front == null) {
+                rear = null;
+            }
+            size--;
 
-        System.out.println("Masukkan ID Dokter: ");
-        String idDokter = sc.nextLine();
-        sc.nextLine();
-        System.out.println("Masukkan Nama Dokter: ");
-        String nama = sc.nextLine();
-        sc.nextLine();
+            System.out.print("Masukkan ID Dokter: ");
+            String idDokter = sc.next();
+            sc.nextLine();
 
-        Dokter03 dokter = new Dokter03(idDokter, nama);
+            System.out.print("Masukkan Nama Dokter: ");
+            String nama = sc.nextLine();
 
-        System.out.print("Masukkan Durasi Layanan (jam): ");
-        int durasi = sc.nextInt();
-        
-        int biaya = 0;
-        TransaksiLayanan03 transaksi = new TransaksiLayanan03(dilayani, dokter, durasi, biaya);
-        biaya = transaksi.hitungBiaya();
-        System.out.println(">> Pasien telah dilayani, transaksi berhasil dicatat.");
-        
-        if (rearTransaksi < max) {
+            Dokter03 dokter = new Dokter03(idDokter, nama);
+
+            System.out.print("Masukkan Durasi Layanan (jam): ");
+            int durasi = sc.nextInt();
+            sc.nextLine();
+            
+            TransaksiLayanan03 transaksi = new TransaksiLayanan03(dilayani, dokter, durasi);
+            
+            System.out.println(">> Pasien telah dilayani, transaksi berhasil dicatat.");
+            
+            if (rearTransaksi < max) {
                 transaksiQueue[rearTransaksi++] = transaksi;
             } else {
                 System.out.println("Antrian transaksi penuh, transaksi tidak dapat dicatat.");
@@ -103,7 +114,7 @@ import java.util.Scanner;
             System.out.println("-- Riwayat Transaksi --");
             System.out.println("Daftar Transaksi:");
             for (int i = 0; i < rearTransaksi; i++) {
-                String namaPasien = transaksiQueue[i].pasien.getNamaPasien();
+                String namaPasien = transaksiQueue[i].pasien.nama;
                 int durasi = transaksiQueue[i].durasiLayanan;
                 int biaya = transaksiQueue[i].biaya;
                 System.out.println(namaPasien + " (" + durasi + " jam): Rp. " + biaya);

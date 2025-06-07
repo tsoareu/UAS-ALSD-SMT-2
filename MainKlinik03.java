@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class MainKlinik03 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Klinik03 klinik = new Klinik03(0);
+        Klinik03 klinik = new Klinik03(0); 
         
         while (true) {
             System.out.println();
@@ -18,22 +18,13 @@ public class MainKlinik03 {
 
             switch (pilihan) {
                 case 1:
-                    sc.nextLine();
-                    System.out.print("Nama Pasien   : ");
-                    String namaPasien = sc.nextLine();
-                    System.out.print("NIK           : ");
-                    String nik = sc.nextLine();
-                    System.out.print("Keluhan       : ");
-                    String keluhan = sc.nextLine();
-
-                    Pasien03 p = new Pasien03(namaPasien, nik, keluhan);
-                    klinik.tambahPasien(p);
+                    klinik.tambahPasien(null);
                     break;
                 case 2 :
                     klinik.lihatAntrian();
                     break;
                 case 3 :
-                    klinik.layaniPasien(null, null, pilihan);
+                    klinik.layaniPasien();
                     break;
                 case 4 :
                     klinik.cekSisaAntrian();

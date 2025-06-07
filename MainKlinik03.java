@@ -18,10 +18,19 @@ public class MainKlinik03 {
 
             switch (pilihan) {
                 case 1:
-                    
+                    sc.nextLine();
+                    System.out.print("Nama Pasien   : ");
+                    String namaPasien = sc.nextLine();
+                    System.out.print("NIK           : ");
+                    String nik = sc.nextLine();
+                    System.out.print("Keluhan       : ");
+                    String keluhan = sc.nextLine();
+
+                    Pasien03 p = new Pasien03(namaPasien, nik, keluhan);
+                    klinik.tambahPasien(p);
                     break;
                 case 2 :
-
+                    klinik.lihatAntrian();
                     break;
                 case 3 :
                     

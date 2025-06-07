@@ -5,6 +5,7 @@ public class MainKlinik03 {
         Klinik03 klinik = new Klinik03();
         
         while (true) {
+            System.out.println();
             System.out.println("=== SISTEM ANTRIAN KLINIK ===");
             System.out.println("1. Tambah Pasien ke Antrian");
             System.out.println("2. Lihat Antrian");

@@ -63,10 +63,12 @@ public class Klinik03 {
         int tarifPerjam = 50000;
         int biaya = durasi * tarifPerjam;
         TransaksiLayanan03 transaksi = new TransaksiLayanan03(dilayani, dokter, durasi, biaya);
+        System.out.println(">> Pasien telah dilayani, transaksi berhasil dicatat.");
         if (rearTransaksi < max) {
             transaksiQueue[rearTransaksi++] = transaksi;
         }
         return dilayani;
+
     }
 
     public void cekSisaAntrian() {

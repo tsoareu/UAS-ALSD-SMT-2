@@ -24,8 +24,7 @@ public class MainKlinik03 {
 
                     break;
                 case 3 :
-                    
-
+                    klinik.layaniPasien(null, null, pilihan);
                     break;
                 case 4 :
                     klinik.cekSisaAntrian();

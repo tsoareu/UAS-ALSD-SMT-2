@@ -13,5 +13,5 @@ public class Dokter03 {
 
     public String getNamaDokter() {
         return nama;
-    }
+    } 
 }

@@ -1,28 +1,39 @@
 public class AntrianPasien {
     Pasien03[] data;
-    NodePasien head;
-    NodePasien tail;
-    int rear;
-    int front;
+    NodePasien front;
+    NodePasien rear;
+    int size;
+    int max;
+
+    public AntrianPasien(int max) {
+        this.front = front;
+        this.rear = rear;
+        this.size = 0;
+        this.max = max;
+    }
 
     boolean isEmpty() {
-        return (head == null);
+        return (front == null);
+    }
+
+    boolean isFull() {
+        return (size == max);
     }
 
     public void tambahPasien(Pasien03 pasien) {
         NodePasien newNode = new NodePasien(pasien);
         if (isEmpty()) {
-            head = newNode;
-            tail = newNode;
+            front = newNode;
+            rear = newNode;
         } else {
-            newNode = head;
-            head = newNode;
+            newNode = front;
+            front = newNode;
         }
     }
 
     public void lihatAntrian() {
         if (isEmpty()) {
-            NodePasien temp = head;
+            NodePasien temp = front;
             System.out.println("-- Antrian Pasien --");
             System.out.println("Antrian Pasien: ");
             while (temp != null) {
@@ -40,7 +51,7 @@ public class AntrianPasien {
 
     public void cekSisaAntrian() {
         int count = 0;
-        NodePasien current = head;
+        NodePasien current = front;
         while (current != null) {
             count++;
             current = current.next;
@@ -49,11 +60,11 @@ public class AntrianPasien {
         
     }
 
-    public void lihatRiwayatTransaksi() {
+    public void lihatRiwayatTransaksi(int indeks) {
         if (isEmpty()) {
             System.out.println("Tidak ada riwayat transaksi");
         } else {
-            for (int i = 0; i < rear; i++) {
+            for (int i = 0; i <= indeks; i++) {
                 System.out.println("Daftar Transaksi: ");
                 System.out.println( );
                 System.out.println();

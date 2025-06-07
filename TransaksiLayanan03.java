@@ -5,7 +5,7 @@ public class TransaksiLayanan03 {
     int biaya;
 
     TransaksiLayanan03() {
-
+        
     }
 
     TransaksiLayanan03(Pasien03 pasien, Dokter03 dokter, int durasi, int biaya) {

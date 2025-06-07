@@ -1,4 +1,7 @@
-public class Klinik03 {
+import java.util.Scanner;
+
+;public class Klinik03 {
+    Scanner sc = new Scanner(System.in);
     NodePasien front;
     NodePasien rear;
     int size;
@@ -35,7 +38,7 @@ public class Klinik03 {
     }
 
     public void lihatAntrian() {
-        if (isEmpty()) {
+        if (!isEmpty()) {
             NodePasien temp = front;
             System.out.println("-- Antrian Pasien --");
             System.out.println("Antrian Pasien: ");
@@ -48,27 +51,41 @@ public class Klinik03 {
         }
     }
 
-    public Pasien03 layaniPasien(String idDokter, String namaDokter, int durasi) {
+    public Pasien03 layaniPasien() {
         if (isEmpty()) {
             System.out.println("Antrian kosong.");
             return null;
-        }
+        } else {
         Pasien03 dilayani = front.data;
+        System.out.println("Pasien " + dilayani.nama + " dipanggil");
+
         front = front.next;
         if (front == null) {
             rear = null;
         }
         size--;
-        Dokter03 dokter = new Dokter03(idDokter, namaDokter);
-        int tarifPerjam = 50000;
-        int biaya = durasi * tarifPerjam;
+
+        String idDokter = null, nama = null;
+        int biaya = 0;
+        Dokter03 dokter = new Dokter03(idDokter, nama);
+
+        System.out.println("Masukkan ID Dokter: ");
+        idDokter = sc.nextLine();
+        System.out.println("Masukkan Nama Dokter: ");
+        nama = sc.nextLine();
+        System.out.print("Masukkan Durasi Layanan (jam): ");
+        int durasi = sc.nextInt();
+        
         TransaksiLayanan03 transaksi = new TransaksiLayanan03(dilayani, dokter, durasi, biaya);
         System.out.println(">> Pasien telah dilayani, transaksi berhasil dicatat.");
+        
         if (rearTransaksi < max) {
-            transaksiQueue[rearTransaksi++] = transaksi;
+                transaksiQueue[rearTransaksi++] = transaksi;
+            } else {
+                System.out.println("Antrian transaksi penuh, transaksi tidak dapat dicatat.");
+            }
+            return dilayani;
         }
-        return dilayani;
-
     }
 
     public void cekSisaAntrian() {

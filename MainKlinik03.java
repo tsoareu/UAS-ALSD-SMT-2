@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class MainKlinik03 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Klinik03 klinik = new Klinik03(100); 
+        Klinik03 klinik = new Klinik03(); 
         
         while (true) {
             System.out.println();

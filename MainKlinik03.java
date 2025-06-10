@@ -2,7 +2,8 @@ import java.util.Scanner;
 public class MainKlinik03 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Klinik03 klinik = new Klinik03(); 
+        QueueTransaksi transaksi = new QueueTransaksi(100);
+        Klinik03 klinik = new Klinik03(transaksi);
         
         while (true) {
             System.out.println();
@@ -30,7 +31,7 @@ public class MainKlinik03 {
                     klinik.cekSisaAntrian();
                     break;
                 case 5 :
-                    klinik.lihatRiwayatTransaksi(0);
+                    klinik.lihatRiwayatTransaksi();
                     break;
                 case 0 :
                     System.out.println("Terima kasih telah mengakses Sistem Antrian Klinik.");

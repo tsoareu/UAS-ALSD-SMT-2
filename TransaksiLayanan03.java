@@ -4,10 +4,6 @@ public class TransaksiLayanan03 {
     int durasiLayanan;
     int biaya;
 
-    TransaksiLayanan03() {
-
-    }
-
     TransaksiLayanan03(Pasien03 pasien, Dokter03 dokter, int durasi) {
         this.dokter = dokter;
         this.pasien = pasien;

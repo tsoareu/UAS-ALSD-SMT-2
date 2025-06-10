@@ -12,11 +12,11 @@ public class Dokter03 {
         System.out.println("Nama Dokter : " + nama);
     }
 
-    public String getIdDokter() {
+    public String getIdDokter() { //untuk ambil informasi id dokter
         return idDokter;
     }
 
-    public String getNamaDokter() {
+    public String getNamaDokter() { //untuk ambil informasi nama dokter
         return nama;
     } 
 }

@@ -1,6 +1,5 @@
 import java.util.Scanner;
-
-;public class Klinik03 {
+public class Klinik03 {
     Scanner sc = new Scanner(System.in);
     NodePasien front;
     NodePasien rear;

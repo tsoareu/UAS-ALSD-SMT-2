@@ -81,7 +81,7 @@ import java.util.Scanner;
             sc.nextLine();
 
             System.out.print("Masukkan Nama Dokter: ");
-            String nama = sc.nextLine();
+            String nama = sc.nextLine(); 
 
             Dokter03 dokter = new Dokter03(idDokter, nama);
 
